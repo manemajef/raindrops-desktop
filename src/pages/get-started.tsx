@@ -20,18 +20,20 @@ export default function GetStarted() {
           <CardContent className="mt-4">
             <div className="grid w-full max-w-sm items-center gap-3">
               <Label htmlFor="api-key">API-Key</Label>
-
-              <Input
-                type="text"
-                id="api-key"
-                placeholder="66f24040-0217-4d72-be10-d12ff098d2c8"
-              />
-            </div>
-            <div className="w-full flex gap-4 mt-4">
-              <Button className="w-1/2">Register</Button>
-              <Button className="w-1/2" variant="outline">
-                Help
-              </Button>
+              <div className="max-w-sm">
+                <Input
+                  type="text"
+                  id="api-key"
+                  placeholder="66f24040-0217-4d72-be10-d12ff098d2c8"
+                  className="w-full"
+                />
+              </div>
+              <div className="w-full flex gap-4 mt-4">
+                <Button className="w-1/2">Register</Button>
+                <Button className="w-1/2" variant="outline">
+                  Help
+                </Button>
+              </div>
             </div>
           </CardContent>
         </CardHeader>

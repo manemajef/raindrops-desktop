@@ -14,7 +14,8 @@ CODEx_TUTOR_NOTES.md
 dist-ssr
 *.local
 .env 
-
+collections.json 
+raindrops.json 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -25,6 +25,8 @@ import {
 } from "@/components/ui/popover";
 import AppBreadcrumbs from "./app-breadcrumbs";
 
+import ThemeToggle from "./theme-toggle";
+
 const teams = ["Acme Inc.", "Origin UI", "Junon"];
 
 // Navigation links array to be used in both desktop and mobile menus
@@ -41,12 +43,15 @@ export default function Navbar({ trigger }: { trigger?: React.ReactNode }) {
     <header className="border-b px-4 md:px-6">
       <div className="flex h-12 items-center justify-between gap-4">
         {/* Left side */}
-        <div className="flex flex-1 items-center gap-2">
+        <div className="flex flex-1 items-center gap-4">
           {/* Mobile menu trigger */}
           {trigger}
           <AppBreadcrumbs />
 
           {/* <UserMenu /> */}
+        </div>
+        <div>
+          <ThemeToggle />
         </div>
       </div>
     </header>
