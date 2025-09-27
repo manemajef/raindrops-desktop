@@ -1,14 +1,21 @@
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url";
 import { z } from "zod";
 
-dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+// emulate __dirname in ESM
+const moduleFilename = fileURLToPath(import.meta.url);
+export const backendDir = path.dirname(moduleFilename);
+
+dotenv.config({ path: "../../.env" });
+
 const envSchema = z.object({
   RAINDROP_TOKEN: z.string().min(1, "RAINDROP_TOKEN is required"),
   NODE_ENV: z
     .enum(["development", "test", "production"])
     .default("development"),
 });
+
 const parsed = envSchema.safeParse(process.env);
 if (!parsed.success) {
   console.error("invalid");

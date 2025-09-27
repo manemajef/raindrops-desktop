@@ -4,3 +4,4 @@ onlyBuiltDependencies:
   - electron
   - esbuild
   - keytar
+  - lzma-native
