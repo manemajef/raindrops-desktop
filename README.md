@@ -1,30 +1,89 @@
-# React + TypeScript + Vite
+# Raindrops Desktop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Because as usefull as this platform is, it's UI looks like shit and it hurts.
 
-Currently, two official plugins are available:
+This is **Raindrops Desktop**: a clunky love-letter to productivity masochism. It’s an Electron app that takes your Raindrop.io bookmarks, fetches them with the API, dumps them into SQLite (I wish someone told me before sqlite in electron is such a mess..), and pretends to be useful.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Whats the point?
 
-## Expanding the ESLint configuration
+TBH - none.. Im board and Im annoyed that the native app dosnt have the feature to create _Notion_ like "databases" and filter by matching tags, domains etc..
+**Will it be usefull?** probably no..
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Features (aka: future sources of pain)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Bookmark syncing**: Raindrop.io → SQLite, because we obviously trust ourselves more than their infrastructure.
+- **Auth handling**: Uses OAuth and refresh tokens
+- **Frontend**: React + shadcn/ui
+- **Backend**: Drizzle ORM — which sounds fancy until you spend three hours wondering why `references()` explodes. (I realy miss _Flask_ and _FastAPI_ )
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+## If for some reason you want to use it (a.k.a. Setup)
+
+1. **Fork or clone this repo**
+
+   ```bash
+   git clone https://github.com/yourname/raindrops-desktop.git
+   cd raindrops-desktop
+   ```
+
+2. **Install dependencies**  
+   (brace yourself: you’ll need to rebuild `better-sqlite3` at least 7 times)
+
+   ```bash
+   pnpm install
+   pnpm rebuild
+   ```
+
+3. **Run in dev mode**  
+   (and pray Electron doesn’t yell about `NODE_MODULE_VERSION` mismatches again)
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Build**  
+   (for when you want to share the suffering)
+   ```bash
+   pnpm build
+   ```
+
+---
+
+## Roadmap
+
+- [ ] Proper error handling (instead of console.log and despair).
+- [ ] Syncing without spamming the Raindrop API like a drunk script kiddie.
+- [ ] Something resembling tests. Ha. Sure.
+- [ ] Dark mode — because every German README must mention it.
+
+---
+
+## FAQ
+
+**Q: Why does it crash on startup?**  
+A: Because you touched it.
+
+**Q: Why SQLite in Electron?**  
+A: Because I like pain.
+
+**Q: Why not just use the Raindrop web app?**  
+A: Oh look, another genius with hindsight.
+
+---
+
+## Development Notes / Known Issues
+
+- If you see `__dirname is not defined` — congrats, you are me last Tuesday.
+- If `better-sqlite3` refuses to build: delete `node_modules`, sacrifice a goat, and run `pnpm rebuild`.
+- If nothing works at all, that’s called “feature parity” with my life choices.
+
+---
+
+## License
+
+OpenAI i guess (yes even the readme file was partly generated with chatGPT)
+
+---
