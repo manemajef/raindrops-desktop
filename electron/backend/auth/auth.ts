@@ -4,26 +4,24 @@ import { db } from "../db";
 import { authTokens } from "../schema";
 import { eq } from "drizzle-orm";
 import { string } from "zod";
-
-function waitForCode(authUrl: string): Promise<string> {
+import dotenv from "dotenv";
+dotenv.config();
+function waitForCode(redirectUri: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    const authWin = new BrowserWindow({
-      width: 500,
-      height: 600,
-      webPreferences: {
-        nodeIntegration: false,
-      },
-    });
-    authWin.loadURL(authUrl);
-    authWin.webContents.on("will-redirect", (event, url) => {
-      const code = new URL(url).searchParams.get("code");
-      if (code) {
-        event.preventDefault();
-        authWin.close();
-        resolve(code);
+    const server = http.createServer((req, res) => {
+      if (req.url?.startsWith("/callback")) {
+        const code = new URL(req.url, redirectUri).searchParams.get("code");
+        res.end("Login successful! You can close this window now.");
+        server.close();
+        if (code) resolve(code);
+        else reject(new Error("No code in callback"));
       }
     });
-    authWin.on("closed", () => reject(new Error("Auth window closed")));
+    server.listen(3000, () => {
+      console.log(
+        "Listening for OAuth callback on http://localhost:3000/callback"
+      );
+    });
   });
 }
 
@@ -62,20 +60,28 @@ export async function Authenticate() {
   )}&response_type=code`;
 
   await shell.openExternal(authUrl);
-  const code = await waitForCode(authUrl);
+  const code = await waitForCode(redirectUri);
 
-  const tokenRes = await fetch("https://raindrop.io/auth/access_token", {
+  const tokenRes = await fetch("https://raindrop.io/oauth/access_token", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      client_id: client_id,
-      client_secret: client_secret,
-      redirectUri: redirectUri,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Accept: "application/json",
+    },
+    body: new URLSearchParams({
+      client_id,
+      client_secret,
+      redirect_uri: redirectUri,
       grant_type: "authorization_code",
       code,
     }),
   });
-  const token = await tokenRes.json();
+  const tokenRaw = await tokenRes.text();
+  console.log("OAuth token response:", tokenRes.status, tokenRaw);
+  if (!tokenRes.ok) {
+    throw new Error(`Token request failed: ${tokenRes.status} ${tokenRaw}`);
+  }
+  const token = JSON.parse(tokenRaw);
   if (token) {
     await updateToken(token);
     // await db.insert(authTokens).values({
@@ -105,15 +111,23 @@ export async function refreshToken() {
   try {
     const tokenRes = await fetch("https://raindrop.io/oauth/access_token", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        client_id: client_id,
-        client_secret: client_secret,
-        grant_type: grant_type,
-        refresh_token: refresh_token,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+      },
+      body: new URLSearchParams({
+        client_id,
+        client_secret,
+        grant_type,
+        refresh_token,
       }),
     });
-    const token = await tokenRes.json();
+    const tokenRaw = await tokenRes.text();
+    console.log("OAuth refresh response:", tokenRes.status, tokenRaw);
+    if (!tokenRes.ok) {
+      throw new Error(`Refresh request failed: ${tokenRes.status} ${tokenRaw}`);
+    }
+    const token = JSON.parse(tokenRaw);
     await updateToken(token);
     return token;
   } catch (err) {

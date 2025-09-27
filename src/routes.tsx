@@ -47,12 +47,12 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/welcome" element={<Welcome />}></Route>
         <Route path="/welcome/register" element={<GetStarted />} />
-        {/* <Route element={<ProtectedRoute />}> */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route path="/get-started" element={<GetStarted />} /> */}
+        <Route element={<ProtectedRoute />}>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/get-started" element={<GetStarted />} /> */}
+          </Route>
         </Route>
-        {/* </Route> */}
       </Routes>
     </BrowserRouter>
   );

@@ -32,6 +32,6 @@ contextBridge.exposeInMainWorld("authApi", {
   query: () => ipcRenderer.invoke("auth:query"),
 });
 
-contextBridge.exposeInIsolatedWorld("sync", {
+contextBridge.exposeInMainWorld("sync", {
   sync: () => ipcRenderer.invoke("sync"),
 });
