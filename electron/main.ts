@@ -2,6 +2,13 @@ import { app, BrowserWindow, ipcMain } from "electron";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { syncAll } from "./backend/sync";
+import {
+  Authenticate,
+  refreshToken,
+  verifyToken,
+  queryToken,
+} from "./backend/auth/auth";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -17,6 +24,19 @@ const __dirname = path.dirname(__filename);
 ipcMain.handle("sync-all", async () => {
   return await syncAll();
 });
+ipcMain.handle("auth:authenticate", async () => {
+  return await Authenticate();
+});
+ipcMain.handle("auth:refresh", async () => {
+  return await refreshToken();
+});
+ipcMain.handle("auth:verify", async () => {
+  return await verifyToken();
+});
+ipcMain.handle("auth:query", async () => {
+  return await queryToken();
+});
+
 process.env.APP_ROOT = path.join(__dirname, "..");
 
 // 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x

@@ -1,4 +1,5 @@
 import { sqliteTable, int, text } from "drizzle-orm/sqlite-core";
+import { access } from "fs";
 
 export const raindrops = sqliteTable("raindrops", {
   id: int("id").primaryKey(),
@@ -35,8 +36,16 @@ export const syncMeta = sqliteTable("sync_meta", {
   lastSync: text("last_sync"),
 });
 
+export const authTokens = sqliteTable("auth_tokens", {
+  id: int("id").primaryKey(),
+  accessToken: text("access_token").notNull(),
+  refreshToken: text("refresh_token").notNull(),
+  expiresAt: int("expires_at").notNull(),
+});
+
 export const schema = {
   raindrops,
   collections,
   syncMeta,
+  authTokens,
 };
