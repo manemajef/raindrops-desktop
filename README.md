@@ -25,7 +25,7 @@ TBH - none.. Im board and Im annoyed that the native app dosnt have the feature 
 1. **Fork or clone this repo**
 
    ```bash
-   git clone https://github.com/yourname/raindrops-desktop.git
+   git clone https://github.com/manemajef/raindrops-desktop.git
    cd raindrops-desktop
    ```
 
