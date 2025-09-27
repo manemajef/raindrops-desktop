@@ -21,7 +21,7 @@ const __dirname = path.dirname(__filename);
 // │ │ ├── main.js
 // │ │ └── preload.mjs
 // │
-ipcMain.handle("sync-all", async () => {
+ipcMain.handle("sync", async () => {
   return await syncAll();
 });
 ipcMain.handle("auth:authenticate", async () => {

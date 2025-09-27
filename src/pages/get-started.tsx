@@ -30,8 +30,8 @@ export default function GetStarted() {
               </div>
               <div className="w-full flex gap-4 mt-4">
                 <Button className="w-1/2">Register</Button>
-                <Button className="w-1/2" variant="outline">
-                  Help
+                <Button className="w-1/2" variant="outline" asChild>
+                  <a href="/welcome">Cancel</a>
                 </Button>
               </div>
             </div>

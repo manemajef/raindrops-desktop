@@ -1,36 +1,10 @@
 import { db } from "./db";
 import { schema } from "./schema";
-import { headers } from "./utils/get-headers";
+// import { headers } from "./utils/get-headers";
 import { eq } from "drizzle-orm";
-export interface RemoteRaindrop {
-  _id: number;
-  link: string;
-  title: string;
-  excerpt?: string;
-  note?: string;
-  cover?: string;
-  type: string;
-  created: string;
-  lastUpdate: string;
-  collectionId: { $id: number };
-  tags: string[];
-  [key: string]: unknown;
-}
-
-export interface RemoteCollection {
-  _id: number;
-  title: string;
-  description: string;
-  public: boolean;
-  count: number;
-  cover: string[];
-  lastAction: string;
-  created: string;
-  lastUpdate: string;
-  parent: number | null;
-  slug: string;
-  author: boolean;
-}
+import { RemoteCollection } from "./schema";
+import { RemoteRaindrop } from "./schema";
+import { queryToken } from "./auth/auth";
 
 function toInsertParamsRaindrops(r: RemoteRaindrop) {
   return {
@@ -49,7 +23,10 @@ function toInsertParamsRaindrops(r: RemoteRaindrop) {
     syncedAt: new Date().toISOString(),
   };
 }
-async function fetchAllRaindrops(raindropsURL: string) {
+type Headers = {
+  Authorization: string;
+};
+async function fetchAllRaindrops(raindropsURL: string, headers: Headers) {
   console.log(headers);
   let page = 0;
   const perpage = 50;
@@ -92,6 +69,12 @@ function ToInsertParamsCollections(r: RemoteCollection) {
 }
 
 export async function syncAll() {
+  const token = await queryToken();
+  if (!token) return;
+  const access_token = token.accessToken;
+  const headers: Headers = {
+    Authorization: `Bearer ${access_token}`,
+  };
   const syncMeta = await db.select().from(schema.syncMeta).limit(1);
   const lastSync = syncMeta[0]?.lastSync;
   let raindropsURL = "https://api.raindrop.io/rest/v1/raindrops/0";
@@ -103,7 +86,7 @@ export async function syncAll() {
   }
   const collectionsURL = "https://api.raindrop.io/rest/v1/collections";
   const [raindropsData, collectionsRes] = await Promise.all([
-    fetchAllRaindrops(raindropsURL),
+    fetchAllRaindrops(raindropsURL, headers),
     fetch(collectionsURL, { headers }),
   ]);
   //   const raindropsData = await raindropsRes.json();
