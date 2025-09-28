@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { syncAll } from "./backend/sync";
+import { resyncAll, syncAll } from "./backend/sync";
 import {
   Authenticate,
   refreshToken,
@@ -35,6 +35,9 @@ ipcMain.handle("auth:verify", async () => {
 });
 ipcMain.handle("auth:query", async () => {
   return await queryToken();
+});
+ipcMain.handle("resync", async () => {
+  return await resyncAll();
 });
 
 process.env.APP_ROOT = path.join(__dirname, "..");

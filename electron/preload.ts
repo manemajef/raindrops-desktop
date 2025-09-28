@@ -34,4 +34,5 @@ contextBridge.exposeInMainWorld("authApi", {
 
 contextBridge.exposeInMainWorld("sync", {
   sync: () => ipcRenderer.invoke("sync"),
+  resync: () => ipcRenderer.invoke("resync"),
 });

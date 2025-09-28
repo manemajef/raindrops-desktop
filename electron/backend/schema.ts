@@ -15,6 +15,11 @@ export const raindrops = sqliteTable("raindrops", {
   tags: text("tags").$type<string[]>(),
   raw: text("raw").$type<unknown>(),
   syncedAt: text("synced_at"),
+  domain: text("domain"),
+  creatorId: int("creator_id"),
+  creatorName: text("creator_name"),
+  important: int("important", { mode: "boolean" }).default(false),
+  removed: int("removed", { mode: "boolean" }).default(false),
 });
 
 export const collections = sqliteTable("collections", {
@@ -42,39 +47,16 @@ export const authTokens = sqliteTable("auth_tokens", {
   refreshToken: text("refresh_token").notNull(),
   expiresAt: int("expires_at").notNull(),
 });
-export interface RemoteRaindrop {
-  _id: number;
-  link: string;
-  title: string;
-  excerpt?: string;
-  note?: string;
-  cover?: string;
-  type: string;
-  created: string;
-  lastUpdate: string;
-  collectionId: { $id: number };
-  tags: string[];
-  [key: string]: unknown;
-}
 
-export interface RemoteCollection {
-  _id: number;
-  title: string;
-  description: string;
-  public: boolean;
-  count: number;
-  cover: string[];
-  lastAction: string;
-  created: string;
-  lastUpdate: string;
-  parent: number | null;
-  slug: string;
-  author: boolean;
-}
+export const users = sqliteTable("users", {
+  id: int("id").primaryKey(),
+  fullName: text("full_name"),
+});
 
 export const schema = {
   raindrops,
   collections,
   syncMeta,
   authTokens,
+  users,
 };

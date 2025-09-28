@@ -1,9 +1,9 @@
 import { db } from "./db";
-import { schema } from "./schema";
+import { schema, syncMeta } from "./schema";
 // import { headers } from "./utils/get-headers";
 import { eq } from "drizzle-orm";
-import { RemoteCollection } from "./schema";
-import { RemoteRaindrop } from "./schema";
+import { RemoteCollection } from "electron/types/remote-collection";
+import { RemoteRaindrop } from "electron/types/remote-raindrop";
 import { queryToken } from "./auth/auth";
 
 function toInsertParamsRaindrops(r: RemoteRaindrop) {
@@ -16,8 +16,13 @@ function toInsertParamsRaindrops(r: RemoteRaindrop) {
     created: r.created,
     cover: r.cover ?? "",
     type: r.type,
+    domain: r.domain ?? "",
+    creatorId: r.creatorRef._id,
+    creatorName: r.creatorRef.name,
+    removed: r.removed ?? false,
+    important: r.important ?? false,
     lastUpdate: r.lastUpdate,
-    collectionId: r.collectionId,
+    collection_id: r.collectionId,
     tags: JSON.stringify(r.tags ?? []),
     raw: JSON.stringify(r),
     syncedAt: new Date().toISOString(),
@@ -123,4 +128,9 @@ export async function syncAll() {
     collections: collectionsData.items?.length ?? 0,
     raindrops: raindropsData?.length ?? 0,
   };
+}
+
+export async function resyncAll() {
+  await db.update(syncMeta).set({ lastSync: null }).where(eq(syncMeta.id, 1));
+  await syncAll();
 }

@@ -9,6 +9,7 @@ declare global {
     };
     sync: {
       sync: () => Promise<any>;
+      resync: () => Promise<any>;
     };
   }
 }
