@@ -11,7 +11,7 @@ export const raindrops = sqliteTable("raindrops", {
   cover: text("cover"),
   type: text("type"),
   lastUpdate: text("last_update"),
-  collection_id: int("collection_id"),
+  collection_id: int("collection_id").references(() => collections.id),
   tags: text("tags").$type<string[]>(),
   raw: text("raw").$type<unknown>(),
   syncedAt: text("synced_at"),
@@ -20,6 +20,7 @@ export const raindrops = sqliteTable("raindrops", {
   creatorName: text("creator_name"),
   important: int("important", { mode: "boolean" }).default(false),
   removed: int("removed", { mode: "boolean" }).default(false),
+  userId: int("user_id").references(() => users.id),
 });
 
 export const collections = sqliteTable("collections", {
@@ -35,10 +36,14 @@ export const collections = sqliteTable("collections", {
   parent: int("parent"),
   slug: text("slug"),
   author: int("author", { mode: "boolean" }).notNull().default(true),
+  creatorId: text("creator_id"),
+  creatorName: text("creator_name"),
+  userId: int("user_id").references(() => users.id),
 });
 export const syncMeta = sqliteTable("sync_meta", {
   id: int("id").primaryKey(),
   lastSync: text("last_sync"),
+  userId: int("user_id").references(() => users.id),
 });
 
 export const authTokens = sqliteTable("auth_tokens", {
@@ -46,11 +51,19 @@ export const authTokens = sqliteTable("auth_tokens", {
   accessToken: text("access_token").notNull(),
   refreshToken: text("refresh_token").notNull(),
   expiresAt: int("expires_at").notNull(),
+  userId: int("user_id").references(() => users.id),
 });
 
 export const users = sqliteTable("users", {
   id: int("id").primaryKey(),
   fullName: text("full_name"),
+});
+
+export const appState = sqliteTable("app_state", {
+  id: int("id").primaryKey(),
+  userId: int("user_id").references(() => users.id),
+  metaId: int("meta_id").references(() => syncMeta.id),
+  tokenId: int("token_id").references(() => authTokens.id),
 });
 
 export const schema = {

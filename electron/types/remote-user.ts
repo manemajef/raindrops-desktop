@@ -1,4 +1,4 @@
-export interface User {
+export interface RemoteUser {
   _id: number;
   config: Config;
   dropbox: Dropbox;

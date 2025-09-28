@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
 
-export function AlertDialogDemo() {
+export function AlertResync() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>

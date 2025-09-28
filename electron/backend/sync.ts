@@ -1,11 +1,12 @@
 import { db } from "./db";
-import { schema, syncMeta } from "./schema";
+import { schema, syncMeta, users } from "./schema";
 // import { headers } from "./utils/get-headers";
 import { eq } from "drizzle-orm";
 import { RemoteCollection } from "electron/types/remote-collection";
 import { RemoteRaindrop } from "electron/types/remote-raindrop";
 import { queryToken } from "./auth/auth";
-
+import { Headers } from "electron/types/types";
+import { RemoteUser } from "electron/types/remote-user";
 function toInsertParamsRaindrops(r: RemoteRaindrop) {
   return {
     id: r._id,
@@ -28,9 +29,7 @@ function toInsertParamsRaindrops(r: RemoteRaindrop) {
     syncedAt: new Date().toISOString(),
   };
 }
-type Headers = {
-  Authorization: string;
-};
+
 async function fetchAllRaindrops(raindropsURL: string, headers: Headers) {
   console.log(headers);
   let page = 0;
@@ -110,6 +109,7 @@ export async function syncAll() {
     await db
       .insert(schema.raindrops)
       .values(toInsertParamsRaindrops(r))
+
       .onConflictDoUpdate({
         target: schema.raindrops.id,
         set: toInsertParamsRaindrops(r),
@@ -123,6 +123,19 @@ export async function syncAll() {
       target: schema.syncMeta.id,
       set: { lastSync: now },
     });
+  const user: RemoteUser = (
+    await fetch("https://api.raindrop.io/rest/v1/user", { headers })
+  ).json().user;
+  if (user) {
+    await db
+      .insert(users)
+      .values({
+        id: user._id,
+        fullName: user.fullName,
+      })
+      .onConflictDoNothing({ target: users.id });
+  }
+
   console.log("synced!");
   return {
     collections: collectionsData.items?.length ?? 0,

@@ -1,9 +1,9 @@
-import { BrowserWindow, shell } from "electron";
+import { shell } from "electron";
 import http from "http";
 import { db } from "../db";
-import { authTokens } from "../schema";
+import { authTokens, appState, users } from "../schema";
 import { eq } from "drizzle-orm";
-import { string } from "zod";
+import { RemoteUser } from "electron/types/remote-user";
 import dotenv from "dotenv";
 dotenv.config();
 function waitForCode(redirectUri: string): Promise<string> {
@@ -25,21 +25,38 @@ function waitForCode(redirectUri: string): Promise<string> {
   });
 }
 
+async function getActiveUserId() {
+  const [state] = await db
+    .select({ userId: appState.userId })
+    .from(appState)
+    .where(eq(appState.id, 1));
+  return state?.userId ?? null;
+}
+
 export async function queryToken() {
-  const rows = await db.select().from(authTokens).where(eq(authTokens.id, 1));
-  return rows[0] ?? null;
+  const userId = await getActiveUserId();
+  if (!userId) return null;
+  const [row] = await db
+    .select()
+    .from(authTokens)
+    .where(eq(authTokens.id, userId));
+  return row ?? null;
 }
 
 async function updateToken(token) {
   const nowSec = Math.floor(Date.now() / 1000);
   const expiresInSec = nowSec + token.expires_in;
+  const userId = await getActiveUserId();
+  if (!userId) return;
+
   await db
     .insert(authTokens)
     .values({
-      id: 1,
+      id: userId,
       accessToken: token.access_token,
       refreshToken: token.refresh_token,
       expiresAt: expiresInSec,
+      userId,
     })
     .onConflictDoUpdate({
       target: authTokens.id,
@@ -50,7 +67,36 @@ async function updateToken(token) {
       },
     });
 }
-
+async function updateAppState(token) {
+  const accessToken = token.access_token;
+  const res = await fetch("https://api.raindrop.io/rest/v1/user", {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  if (!res.ok) {
+    return;
+  }
+  const { user }: { user: RemoteUser } = await res.json();
+  await db
+    .insert(users)
+    .values({
+      id: user._id,
+      fullName: user.fullName,
+    })
+    .onConflictDoUpdate({ target: users.id, set: { fullName: user.fullName } });
+  await db
+    .insert(appState)
+    .values({
+      id: 1,
+      userId: user._id,
+    })
+    .onConflictDoUpdate({
+      target: appState.id,
+      set: { userId: user._id, metaId: null, tokenId: null },
+    });
+}
 export async function Authenticate() {
   const client_id = process.env.RAINDROP_CLIENT_ID!;
   const client_secret = process.env.RAINDROP_CLIENT_SECRET!;
@@ -83,6 +129,7 @@ export async function Authenticate() {
   }
   const token = JSON.parse(tokenRaw);
   if (token) {
+    await updateAppState(token);
     await updateToken(token);
     // await db.insert(authTokens).values({
     //   accessToken: token.access_token,
@@ -98,11 +145,16 @@ export async function refreshToken() {
   const client_secret = process.env.RAINDROP_CLIENT_SECRET!;
   const client_id = process.env.RAINDROP_CLIENT_ID!;
   const grant_type = "refresh_token";
-  const rows = await db
+  const userId = await getActiveUserId();
+  if (!userId) {
+    const auth = await Authenticate();
+    return auth;
+  }
+  const [tokenRow] = await db
     .select({ refreshToken: authTokens.refreshToken })
     .from(authTokens)
-    .where(eq(authTokens.id, 1));
-  const refresh_token = rows[0]?.refreshToken;
+    .where(eq(authTokens.id, userId));
+  const refresh_token = tokenRow?.refreshToken;
   if (!refresh_token) {
     const auth = await Authenticate();
     return auth;
