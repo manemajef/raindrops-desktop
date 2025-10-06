@@ -1,0 +1,52 @@
+{
+  "result": true,
+  "user": {
+    "tfa": { "enabled": false },
+    "files": {
+      "size": 10000000000,
+      "lastCheckPoint": "2025-09-30T00:07:37.151Z",
+      "used": 330352
+    },
+    "_id": 2538886,
+    "fullName": "Rotem Semah",
+    "email": "rotem.semah@gmail.com",
+    "avatar": "",
+    "provider": "google",
+    "google": { "enabled": true },
+    "pro": true,
+    "groups": [
+      {
+        "title": "My collections",
+        "hidden": false,
+        "sort": 0,
+        "collections": [60490750, 59250730, 59353649, 60113702, 59705853]
+      }
+    ],
+    "lastAction": "2025-10-06T09:57:04.658Z",
+    "lastVisit": "2025-10-06T08:50:12.099Z",
+    "name": "rotem-semah",
+    "registered": "2024-10-15T14:49:24.212Z",
+    "lastUpdate": "2025-10-06T09:35:41.545Z",
+    "config": {
+      "default_collection_view": "list",
+      "raindrops_hide": ["grid_info"],
+      "raindrops_buttons": ["select", "preview", "edit", "remove"],
+      "raindrops_search_by_score": true,
+      "raindrops_search_incollection": false,
+      "broken_level": "default",
+      "font_size": 0,
+      "nested_view_legacy": false,
+      "add_default_collection": 0,
+      "acknowledge": [],
+      "ai_suggestions": true,
+      "last_collection": 60793667,
+      "raindrops_grid_cover_size": 2,
+      "raindrops_list_cover_right": false,
+      "filters_hide": false,
+      "tags_hide": false,
+      "tags_sort": "-count",
+      "raindrops_sort": "-created"
+    },
+    "apple": { "enabled": true }
+  }
+}

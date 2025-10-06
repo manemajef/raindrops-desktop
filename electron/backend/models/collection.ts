@@ -1,4 +1,9 @@
-export interface RemoteCollection {
+export interface Root {
+  result: boolean;
+  items: CollectionRaw[];
+}
+
+export interface CollectionRaw {
   _id: number;
   title: string;
   description: string;
@@ -7,23 +12,21 @@ export interface RemoteCollection {
   view: string;
   count: number;
   cover: any[];
-  sort: number | null;
+  sort?: number;
   expanded: boolean;
   creatorRef: CreatorRef;
   lastAction: string;
   created: string;
   lastUpdate: string;
-  parent: string | null;
+  parent: any;
   slug: string;
   access: Access;
   author: boolean;
 }
 
-export interface Access {
-  for: number;
-  level: number;
-  root: boolean;
-  draggable: boolean;
+export interface User {
+  $ref: string;
+  $id: number;
 }
 
 export interface CreatorRef {
@@ -32,7 +35,9 @@ export interface CreatorRef {
   email: string;
 }
 
-export interface User {
-  $ref: string;
-  $id: number;
+export interface Access {
+  for: number;
+  level: number;
+  root: boolean;
+  draggable: boolean;
 }

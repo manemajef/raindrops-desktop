@@ -47,9 +47,6 @@ export function AlertResync() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        {/* <Button variant="ghost" size="icon" className="  size-6">
-          <RefreshCw className="size-3" />
-        </Button> */}
         <IconButton>
           <RefreshCw />
         </IconButton>

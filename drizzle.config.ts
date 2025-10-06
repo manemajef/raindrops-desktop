@@ -1,10 +1,11 @@
-import type { Config } from "drizzle-kit";
+import "dotenv/config";
+import { defineConfig } from "drizzle-kit";
 
-export default {
-  schema: "./electron/backend/schema.ts",
+export default defineConfig({
   out: "./drizzle",
+  schema: "./electron/backend/db/schema.ts",
   dialect: "sqlite",
   dbCredentials: {
-    url: "./data/app.db",
+    url: process.env.DB_FILE_NAME!,
   },
-} satisfies Config;
+});
