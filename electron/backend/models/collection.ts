@@ -1,4 +1,4 @@
-export interface Root {
+export interface CollectionRes {
   result: boolean;
   items: CollectionRaw[];
 }
@@ -18,7 +18,7 @@ export interface CollectionRaw {
   lastAction: string;
   created: string;
   lastUpdate: string;
-  parent: any;
+  parent: Parent | null;
   slug: string;
   access: Access;
   author: boolean;
@@ -40,4 +40,8 @@ export interface Access {
   level: number;
   root: boolean;
   draggable: boolean;
+}
+export interface Parent {
+  $id: 59250730;
+  $ref: "collections";
 }

@@ -1,4 +1,4 @@
-export interface Root {
+export interface RaindropRes {
   result: boolean;
   items: RaindropRaw[];
   count: number;

@@ -1,5 +1,35 @@
 # Raindrops Desktop
 
+#### current state and workflow
+
+###### **db data (`electron/backend/db/data/local.db`)**
+
+Stores all **raindrops**, **collections**, and **user data** (e.g., credentials, last sync) to reduce Raindrop API calls.  
+On startup, data syncs automatically and will later support **incremental sync** (`lastUpdate > lastSync`).  
+In the future, user-specific data such as filtered views or tag updates will also be stored here and synced back to Raindrop.
+
+###### **state data (`electron/backend/data/state.json`)**
+
+Contains **core app state** — primarily the active user — so the app can skip unnecessary API calls or database queries.
+
+###### **workflow**
+
+- On startup, the app checks if an **active user** exists via `loadState()` from  
+  `_electron/backend/utils/state.ts_`.
+
+  - If not, it prompts for a **test token**, which is passed to  
+    `_electron/backend/auth/auth.ts_ → registerToken(token: string)`.  
+    This function fetches user data from the Raindrop API, inserts it into  
+    `_electron/backend/db/data/local.db_`, and updates `_electron/backend/data/state.json_`.
+
+- Once an active user is found, `_electron/backend/sync/sync-data.ts_ → syncData()` runs automatically,  
+  fetching collections and raindrops and updating local data.
+
+> The **public API endpoints** (to be used by the Electron renderer/frontend)  
+> are **not yet implemented**, but `registerToken()` and `syncData()` are already functional internally.
+
+## why ?
+
 > Because as usefull as this platform is, it's UI looks like shit and it hurts.
 
 This is **Raindrops Desktop**: a clunky love-letter to productivity masochism. It’s an Electron app that takes your Raindrop.io bookmarks, fetches them with the API, dumps them into SQLite (I wish someone told me before sqlite in electron is such a mess..), and pretends to be useful.

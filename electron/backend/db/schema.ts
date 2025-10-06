@@ -1,6 +1,14 @@
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { sql } from "drizzle-orm";
 
+export const credentialsTable = sqliteTable("credential", {
+  id: int().primaryKey(),
+  userId: int().references(() => userTable.id),
+  accessToken: text(),
+  refreshToken: text(),
+  tokenEnds: text(),
+});
+
 export const userTable = sqliteTable("user", {
   id: int().primaryKey(),
   fullName: text(),
@@ -9,7 +17,8 @@ export const userTable = sqliteTable("user", {
   lastVisit: text(),
   name: text(),
   lastUpdate: text(),
-  hashedToken: text(),
+  token: text(),
+  lastSync: text(),
 });
 
 export const collectionTable = sqliteTable("collection", {
@@ -17,10 +26,10 @@ export const collectionTable = sqliteTable("collection", {
   title: text(),
   userId: int().references(() => userTable.id),
   count: int(),
-  lastAction: int(),
+  lastAction: text(),
   created: text(),
   lastUpdate: text(),
-  parentId: int().notNull().default(-1),
+  parentId: int(),
 });
 
 export const raindropTable = sqliteTable("raindrop", {
