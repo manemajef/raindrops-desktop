@@ -13,11 +13,12 @@ dist-ssr
 *.local
 .env 
 .env.*
+
+
 data/*
 !data/.gitkeep
-
 demo/*
-!demo/.gitke
+!demo/.gitkeep
  
 dist-electron
 # Editor directories and files
