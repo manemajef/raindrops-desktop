@@ -13,9 +13,12 @@ dist-ssr
 *.local
 .env 
 .env.*
-data/
-demo/
+data/*
+!data/.gitkeep
 
+demo/*
+!demo/.gitke
+ 
 dist-electron
 # Editor directories and files
 .vscode/*
