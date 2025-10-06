@@ -1,41 +1,60 @@
 import type { UserRaw } from "../models/user";
-import type { State, ActiveUser, Credential } from "../models/state";
+import type { State, ActiveUser, Credentials } from "../models/state";
 import { saveState } from "../utils/state";
 import { db } from "../db/index";
 import * as schema from "../db/schema";
+
 const { userTable } = schema;
-const fakeCredentials: Credential = {
+
+const fakeCredentials: Credentials = {
   accessToken: "",
   refreshToken: "",
-  tokenStatr: "",
+  tokenStart: "",
   tokenEnd: "",
 };
-export function activateUser(user: UserRaw, id: number, token: string) {
+
+export function activateUser(id: number, token: string) {
   const activeUser: ActiveUser = {
-    id: id,
-    token: token,
-    lastSync: "",
-    credentiials: fakeCredentials,
+    id,
+    token,
+    lastSync: new Date(),
+    credentials: fakeCredentials,
   };
+
   const state: State = {
     isDev: true,
     isLogged: true,
-    user: activateUser,
+    user: activeUser,
   };
+
   saveState(state);
 }
 
 export async function addUser(user: UserRaw, token: string) {
-  await db.insert(userTable).values({
-    id: user._id,
-    fullName: user.fullName,
-    email: user.email,
-    lastAction: user.lastAction,
-    lastVisit: user.lastVisit,
-    token: token,
-    name: user.name,
-    lastUpdate: user.lastUpdate,
-  }).onConflictDoNothing;
-  const userId = user._id;
-  activateUser(user, userId, token);
+  await db
+    .insert(userTable)
+    .values({
+      id: user._id,
+      fullName: user.fullName,
+      email: user.email,
+      lastAction: user.lastAction,
+      lastVisit: user.lastVisit,
+      token: token,
+      name: user.name,
+      lastUpdate: user.lastUpdate,
+    })
+    .onConflictDoUpdate({
+      target: userTable.id,
+      set: {
+        fullName: user.fullName,
+        email: user.email,
+        lastAction: user.lastAction,
+        lastVisit: user.lastVisit,
+        token: token,
+        name: user.name,
+        lastUpdate: user.lastUpdate,
+      },
+    });
+
+  activateUser(user._id, token);
 }

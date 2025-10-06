@@ -1,9 +1,9 @@
-import { app } from "electron";
 import fs from "fs";
 import path from "path";
 import type { State } from "../models/state";
-const statePath = path.join(app.getPath("appData"), "data", "state.json");
-
+const isDev = true;
+const basePath = path.join(process.cwd(), "data");
+const statePath = path.join(basePath, "state.json");
 export function loadState(): State {
   if (!fs.existsSync(statePath)) {
     const ghost: State = {

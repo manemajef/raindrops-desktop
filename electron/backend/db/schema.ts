@@ -47,7 +47,9 @@ export const raindropTable = sqliteTable("raindrop", {
   important: int({ mode: "boolean" }).notNull().default(false),
   removed: int({ mode: "boolean" }).notNull().default(false),
   created: text(),
-  collectionId: int().references(() => collectionTable.id),
+  collectionId: int()
+    .references(() => collectionTable.id)
+    .default(null),
   lastUpdate: text(),
   domain: text(),
 });

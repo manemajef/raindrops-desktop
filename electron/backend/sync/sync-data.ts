@@ -8,6 +8,7 @@ import { eq } from "drizzle-orm";
 
 export async function syncCollection(collection: CollectionRaw) {
   const { collectionTable } = schema;
+
   await db
     .insert(collectionTable)
     .values({
@@ -45,7 +46,7 @@ export async function syncRaindrop(raindrop: RaindropRaw) {
       important: raindrop.important,
       removed: raindrop.removed,
       created: raindrop.created,
-      collectionId: raindrop.collectionId,
+      collectionId: raindrop.collectionId > 0 ? raindrop.collectionId : null,
       lastUpdate: raindrop.lastUpdate,
       domain: raindrop.domain,
     })
@@ -67,35 +68,52 @@ export async function syncCollections(headers: HeadersInit) {
     headers,
   });
   if (!res.ok) throw new Error("Failed to fetch collections");
-
   const collectionRes: CollectionRes = await res.json();
   const collections: CollectionRaw[] = collectionRes.items ?? [];
-
   res = await fetch("https://api.raindrop.io/rest/v1/collections/childrens", {
     headers,
   });
   if (!res.ok) throw new Error("Failed to fetch subcollections");
-
   const childrenRes: CollectionRes = await res.json();
   if (childrenRes.items?.length) collections.push(...childrenRes.items);
-
   for (const c of collections) await syncCollection(c);
 }
 
 export async function syncRaindrops(headers: HeadersInit) {
-  const res = await fetch("https://api.raindrop.io/rest/v1/raindrops/0", {
-    headers,
-  });
-  if (!res.ok) throw new Error("Failed to fetch raindrops");
+  let page = 0;
+  const raindrops: RaindropRaw[] = [];
+  let done = false;
+  while (!done) {
+    const res = await fetch(
+      `https://api.raindrop.io/rest/v1/raindrops/0?perpage=100&page=${page}`,
+      { headers }
+    );
+    const data: RaindropRes = await res.json();
+    if (data.items.length === 0) done = true;
+    raindrops.push(...data.items);
+    page++;
+  }
+  for (const r of raindrops) {
+    await syncRaindrop(r);
+  }
+  // const res = await fetch("https://api.raindrop.io/rest/v1/raindrops/0", {
+  //   headers,
+  // });
+  // if (!res.ok) throw new Error("Failed to fetch raindrops");
 
-  const raindropsRes: RaindropRes = await res.json();
-  for (const r of raindropsRes.items ?? []) await syncRaindrop(r);
+  // const raindropsRes: RaindropRes = await res.json();
+  // for (const r of raindropsRes.items ?? []) await syncRaindrop(r);
 }
 
 export async function syncData() {
   const { userTable } = schema;
   const state: State = loadState();
   if (!state.isLogged || !state.user) throw new Error("No user is logged");
+  // await db.insert(userTable).values({
+  //   id: -1,
+  //   title: "unsorted",
+  //   userId: state.user.id,
+  // });
 
   const headers = { Authorization: `Bearer ${state.user.token}` };
   await syncCollections(headers);
@@ -106,3 +124,15 @@ export async function syncData() {
     .set({ lastSync: new Date().toISOString() })
     .where(eq(userTable.id, state.user.id));
 }
+
+// const one: number = 1;
+// if (one === 1) {
+//   // const state = loadState();
+//   // console.log(state);
+//   // await syncData();
+//   await syncData();
+//   const collections = await db.select().from(schema.collectionTable);
+//   const raindrops = await db.select().from(schema.raindropTable);
+//   console.log(collections);
+//   console.log(raindrops);
+// }

@@ -4,14 +4,14 @@ export interface State {
   user: ActiveUser;
 }
 
-interface ActiveUser {
+export interface ActiveUser {
   id: number;
   token: string;
   credentials: Credentials | null;
   lastSync: Date;
 }
 
-interface Credentials {
+export interface Credentials {
   accessToken: string;
   refreshToken: string;
   tokenStart: string;
