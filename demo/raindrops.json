@@ -1,0 +1,1028 @@
+{
+  "result": true,
+  "items": [
+    {
+      "_id": 1372590737,
+      "link": "https://kutty.netlify.app/",
+      "title": "Prebuilt Tailwind Components | Kutty",
+      "excerpt": "Kutty is a tailwind plugin for building web applications. It has a set of accessible and reusable components that are commonly used in web applications.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://kutty.netlify.app/brand/og.png",
+      "media": [
+        { "type": "image", "link": "https://kutty.netlify.app/brand/og.png" }
+      ],
+      "tags": [
+        "tailwind",
+        "sections",
+        "blocks",
+        "components",
+        "library",
+        "template"
+      ],
+      "important": true,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-06T09:05:36.351Z",
+      "collection": { "$ref": "collections", "$id": 60793667, "oid": 60793667 },
+      "highlights": [],
+      "lastUpdate": "2025-10-06T09:21:47.183Z",
+      "domain": "kutty.netlify.app",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590737,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-06T09:07:33.441Z",
+        "size": 185833
+      },
+      "broken": false,
+      "collectionId": 60793667
+    },
+    {
+      "_id": 1372589276,
+      "link": "https://merakiui.com/components",
+      "title": "Meraki UI Components | Free Tailwind CSS Components",
+      "excerpt": "Free Tailwind CSS Alert, Heroes, features, sign up forms, CTA, and everything you need to build\n    your websites fast with RTL Languages Support.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://merakiui.com/images/thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://merakiui.com/images/thumbnail.webp"
+        }
+      ],
+      "tags": [
+        "tailwind",
+        "blocks",
+        "ui",
+        "design",
+        "sections",
+        "layout",
+        "responsive design"
+      ],
+      "important": true,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-06T08:59:43.575Z",
+      "collection": { "$ref": "collections", "$id": 60793667, "oid": 60793667 },
+      "highlights": [],
+      "lastUpdate": "2025-10-06T09:21:47.183Z",
+      "domain": "merakiui.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590738,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-06T09:01:32.212Z",
+        "size": 726785
+      },
+      "broken": false,
+      "collectionId": 60793667
+    },
+    {
+      "_id": 1372588118,
+      "link": "https://tailgrids.com/blog/free-tailwind-libraries-ui-kits",
+      "title": "21+ Best Free Tailwind CSS Component Libraries & UI Kits - 2025 | TailGrids",
+      "excerpt": "Explore 21+ free Tailwind CSS libraries and UI kits with ready-to-use components to build dashboards, landing pages, and more faster and...",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://cdn.sanity.io/images/b0qgweu1/production/b57d081e870de4dd4a22b9a97dcb1984a731a973-3840x2016.png",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://cdn.sanity.io/images/b0qgweu1/production/b57d081e870de4dd4a22b9a97dcb1984a731a973-3840x2016.png"
+        }
+      ],
+      "tags": ["ui", "tailwind", "template", "library", "collection"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-06T08:54:22.462Z",
+      "collection": { "$ref": "collections", "$id": 60793701, "oid": 60793701 },
+      "highlights": [],
+      "lastUpdate": "2025-10-06T09:24:34.755Z",
+      "domain": "tailgrids.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590739,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-06T08:56:25.636Z",
+        "size": 9724916
+      },
+      "collectionId": 60793701
+    },
+    {
+      "_id": 1371761728,
+      "link": "https://learn.shayhowe.com/advanced-html-css/responsive-web-design/",
+      "title": "Responsive Web Design - Learn to Code Advanced HTML & CSS",
+      "excerpt": "Learn how to build responsive websites, including flexible layouts, media queries, and flexible media.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/food-sense.png",
+      "media": [
+        {
+          "link": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/food-sense.png",
+          "type": "image"
+        },
+        {
+          "link": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/without-media-queries.png",
+          "type": "image"
+        },
+        {
+          "link": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/with-media-queries.png",
+          "type": "image"
+        },
+        {
+          "link": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/without-viewport.png",
+          "type": "image"
+        },
+        {
+          "link": "https://learn.shayhowe.com/assets/images/courses/advanced-html-css/responsive-web-design/with-viewport.png",
+          "type": "image"
+        }
+      ],
+      "tags": ["responsive design"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T19:27:54.767Z",
+      "collection": { "$ref": "collections", "$id": 60793703, "oid": 60793703 },
+      "highlights": [],
+      "lastUpdate": "2025-10-06T09:27:58.404Z",
+      "domain": "learn.shayhowe.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371761728,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T19:28:51.085Z",
+        "size": 1670300
+      },
+      "broken": false,
+      "collectionId": 60793703
+    },
+    {
+      "_id": 1371761511,
+      "link": "https://web.dev/learn/design",
+      "title": "Learn Responsive Design | web.dev",
+      "excerpt": "A course exploring all aspects of responsive design. Learn how to make sites that look great and work well for everyone.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://web.dev/learn/design/card.png",
+      "media": [
+        { "type": "image", "link": "https://web.dev/learn/design/card.png" },
+        {
+          "type": "image",
+          "link": "https://web.dev/static/images/social-wide.jpg"
+        }
+      ],
+      "tags": ["responsive design", "design", "tutorial"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T19:27:02.720Z",
+      "collection": { "$ref": "collections", "$id": 60793703, "oid": 60793703 },
+      "highlights": [],
+      "lastUpdate": "2025-10-06T09:28:03.511Z",
+      "domain": "web.dev",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371761729,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T19:28:47.877Z",
+        "size": 1593575
+      },
+      "broken": false,
+      "collectionId": 60793703
+    },
+    {
+      "_id": 1371759558,
+      "link": "https://webflow.com/blog/responsive-web-design",
+      "title": "Responsive web design best practices and examples [2025 guide]",
+      "excerpt": "Learn how to implement responsive web design practices into your site to effectively deliver content to all audiences, regardless of device or screen size.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68c48c6ae25483ba8836135c_683788446f6c6d44d150ba5c_DESIGN_BlogHeader07_yellow_2400x1260-1.jpeg",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/68c48c6ae25483ba8836135c_683788446f6c6d44d150ba5c_DESIGN_BlogHeader07_yellow_2400x1260-1.jpeg"
+        }
+      ],
+      "tags": ["design", "article", "responsive design"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T19:23:03.533Z",
+      "collection": { "$ref": "collections", "$id": 60741705, "oid": 60741705 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T19:23:05.285Z",
+      "domain": "webflow.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371759558,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T19:23:35.493Z",
+        "size": 10655496
+      },
+      "broken": false,
+      "collectionId": 60741705
+    },
+    {
+      "_id": 1371759335,
+      "link": "https://www.uxpin.com/studio/blog/best-practices-examples-of-excellent-responsive-design/",
+      "title": "Responsive Design: Best Practices & Examples [2025]",
+      "excerpt": "Explore best practices and real-world examples of responsive web design to create seamless, mobile-friendly user experiences.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://studio.uxpincdn.com/studio/wp-content/uploads/2022/01/Responsive-design-best-practices.png.webp",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://studio.uxpincdn.com/studio/wp-content/uploads/2022/01/Responsive-design-best-practices.png.webp"
+        },
+        {
+          "type": "image",
+          "link": "https://www.uxpin.com/studio/wp-content/uploads/2022/01/Responsive-design-best-practices.png"
+        }
+      ],
+      "tags": ["article", "responsive design", "design"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T19:22:02.481Z",
+      "collection": { "$ref": "collections", "$id": 60741705, "oid": 60741705 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T19:22:05.670Z",
+      "domain": "uxpin.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371759335,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T19:23:29.320Z",
+        "size": 1388631
+      },
+      "collectionId": 60741705
+    },
+    {
+      "_id": 1371757925,
+      "link": "https://web.dev/articles/responsive-web-design-basics",
+      "title": "Responsive web design basics | Articles | web.dev",
+      "excerpt": "Create sites that respond to the needs and capabilities of the device they&#39;re viewed on.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-a-page-the-t-faa09126e69d.png",
+      "media": [
+        {
+          "link": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-a-page-the-t-faa09126e69d.png",
+          "type": "image"
+        },
+        {
+          "link": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-the-same-page-9ac43367e5e0c_1440.png",
+          "type": "image"
+        },
+        {
+          "link": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-a-column-lay-cb8a5725d0a67_1440.jpg",
+          "type": "image"
+        },
+        {
+          "link": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-a-weather-app-8807746eddfbe_1440.png",
+          "type": "image"
+        },
+        {
+          "link": "https://web.dev/static/articles/responsive-web-design-basics/image/screenshot-a-weather-app-236b1e89bc871_1440.png",
+          "type": "image"
+        }
+      ],
+      "tags": ["design", "article", "layout", "responsive design"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T19:20:05.316Z",
+      "collection": { "$ref": "collections", "$id": 60741705, "oid": 60741705 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T19:20:14.473Z",
+      "domain": "web.dev",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371757925,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T19:21:31.466Z",
+        "size": 2331169
+      },
+      "broken": false,
+      "collectionId": 60741705
+    },
+    {
+      "_id": 1371530619,
+      "link": "https://windytoolbox.com/starter-templates",
+      "title": "Windy Toolbox - Free Tailwind CSS Starter Templates",
+      "excerpt": "Browse a collection of free, open-source Tailwind CSS starter templates to accelerate your web development. Perfect for landing pages, dashboards, portfolios, and more!",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://windytoolbox.com/social.png",
+      "media": [
+        { "type": "image", "link": "https://windytoolbox.com/social.png" }
+      ],
+      "tags": ["tailwind", "template", "design", "layout"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T15:43:34.839Z",
+      "collection": { "$ref": "collections", "$id": 60734327, "oid": 60734327 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T15:43:39.830Z",
+      "domain": "windytoolbox.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371530619,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T15:45:23.909Z",
+        "size": 7490104
+      },
+      "broken": false,
+      "collectionId": 60734327
+    },
+    {
+      "_id": 1371530433,
+      "link": "https://www.creative-tim.com/david-ui",
+      "title": "The Ultimate Free Tailwind CSS Components Library | David UI",
+      "excerpt": "Access David UI's free library of Tailwind CSS and React components. Build modern UIs with ease and flexibility.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://www.creative-tim.com/david-ui/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcreativetimofficial%2Fpublic-assets%2Frefs%2Fheads%2Fmaster%2Fmaterial-tailwind%2Fdavid-dashboard.png&w=3840&q=75",
+      "media": [
+        {
+          "link": "https://www.creative-tim.com/david-ui/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcreativetimofficial%2Fpublic-assets%2Frefs%2Fheads%2Fmaster%2Fmaterial-tailwind%2Fdavid-dashboard.png&w=3840&q=75",
+          "type": "image"
+        },
+        {
+          "link": "https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/david-ui-pro-blocks.jpg",
+          "type": "image"
+        }
+      ],
+      "tags": ["ui", "tailwind", "library", "components"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T15:42:47.357Z",
+      "collection": { "$ref": "collections", "$id": 60734327, "oid": 60734327 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T15:42:50.218Z",
+      "domain": "creative-tim.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371530433,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T15:45:21.625Z",
+        "size": 6457956
+      },
+      "broken": false,
+      "collectionId": 60734327
+    },
+    {
+      "_id": 1371524709,
+      "link": "https://javascript.plainenglish.io/i-tried-7-frontend-ui-libraries-now-my-website-look-more-professional-fc350676c62b",
+      "title": "I Tried 7 Frontend UI Libraries — Now My Website Look More Professional",
+      "excerpt": "I Tried 7 Frontend UI Libraries — Now My Website Look More Professional If you are really tired of building UIs that just work but don’t wow? 😩 Let’s fix that. If your UI feels stale …",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://miro.medium.com/0*UdZ9BOl_LH05rg6F.png",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/0*UdZ9BOl_LH05rg6F.png"
+        },
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/v2/resize:fit:1200/0*UdZ9BOl_LH05rg6F.png"
+        }
+      ],
+      "tags": ["article", "ui", "library", "design"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-05T15:34:05.898Z",
+      "collection": { "$ref": "collections", "$id": 60539122, "oid": 60539122 },
+      "lastUpdate": "2025-10-06T09:18:44.769Z",
+      "domain": "javascript.plainenglish.io",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371524709,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T15:36:14.225Z",
+        "size": 327846
+      },
+      "broken": false,
+      "collectionId": 60539122
+    },
+    {
+      "_id": 1371523966,
+      "link": "https://www.hyperui.dev/",
+      "title": "Free Open Source Tailwind CSS v4 Components | HyperUI",
+      "excerpt": "Discover free Tailwind CSS v4 components for your next project, designed to enhance your web development with the latest features and styles.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://www.hyperui.dev/og.jpg",
+      "media": [{ "type": "image", "link": "https://www.hyperui.dev/og.jpg" }],
+      "tags": ["tailwind", "components", "ui", "template", "design"],
+      "highlights": [],
+      "important": true,
+      "removed": false,
+      "created": "2025-10-05T15:31:21.035Z",
+      "collection": { "$ref": "collections", "$id": 60793667, "oid": 60793667 },
+      "lastUpdate": "2025-10-06T09:21:47.183Z",
+      "domain": "hyperui.dev",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590739,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T15:36:09.698Z",
+        "size": 229358
+      },
+      "collectionId": 60793667
+    },
+    {
+      "_id": 1371523227,
+      "link": "https://medium.com/codetodeploy/how-i-build-designer-quality-uis-without-a-designer-using-tailwindcss-shadcn-aceternity-c63e20086512",
+      "title": "How I Build Designer-Quality UIs Without a Designer Using TailwindCSS, ShadCN & Aceternity 🎨",
+      "excerpt": "How I Build Designer-Quality UIs Without a Designer Using TailwindCSS, ShadCN & Aceternity 🎨 Stop paying $5000 for designs when you can create stunning UIs yourself in hours, not weeks 🔒 …",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://miro.medium.com/0*Ypppx0Kmt2jUYdtG",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/0*Ypppx0Kmt2jUYdtG"
+        },
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/v2/da:true/resize:fit:1200/0*Ypppx0Kmt2jUYdtG"
+        }
+      ],
+      "tags": ["shadcn", "ui", "design", "Aceternity"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-05T15:28:56.466Z",
+      "collection": { "$ref": "collections", "$id": 60793701, "oid": 60793701 },
+      "lastUpdate": "2025-10-06T09:28:27.801Z",
+      "domain": "medium.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590740,
+      "broken": false,
+      "cache": {
+        "retries": 1,
+        "retryAfter": "2025-10-07T13:36:56.738Z",
+        "status": "retry"
+      },
+      "collectionId": 60793701
+    },
+    {
+      "_id": 1371522714,
+      "link": "https://medium.com/@sanjay_joshi/discover-the-perfect-next-js-shadcn-template-for-your-web-project-19e3270d1190",
+      "title": "Discover the Perfect Next.js Shadcn Template for Your Project",
+      "excerpt": "Discover the Perfect Next.js Shadcn Template for Your Project Shadcn UI is everywhere these days. Since it came out in 2023, the Shadcn UI library has become super popular, with over 100k+ NPM …",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://miro.medium.com/1*njVi_m9buEbitNmB9WqHdw.jpeg",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/1*njVi_m9buEbitNmB9WqHdw.jpeg"
+        },
+        {
+          "type": "image",
+          "link": "https://miro.medium.com/v2/resize:fit:1200/1*njVi_m9buEbitNmB9WqHdw.jpeg"
+        }
+      ],
+      "tags": ["shadcn", "ui", "template", "tailwind"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-05T15:27:21.912Z",
+      "collection": { "$ref": "collections", "$id": 60793701, "oid": 60793701 },
+      "lastUpdate": "2025-10-06T09:28:37.297Z",
+      "domain": "medium.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1372590741,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T15:36:17.747Z",
+        "size": 355406
+      },
+      "collectionId": 60793701
+    },
+    {
+      "_id": 1371182733,
+      "link": "https://www.reddit.com/r/ZedEditor/s/dZBHHnp4hi",
+      "title": "Blurred Transparent Zed is Awesome! : r/ZedEditor",
+      "excerpt": "Explore this post and more from the ZedEditor community",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://share.redd.it/preview/post/1npbmzk",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://share.redd.it/preview/post/1npbmzk"
+        }
+      ],
+      "tags": ["zed", "editor"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-05T14:33:10.290Z",
+      "collection": { "$ref": "collections", "$id": 60539122, "oid": 60539122 },
+      "lastUpdate": "2025-10-06T09:34:28.712Z",
+      "domain": "reddit.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371524711,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T14:35:56.447Z",
+        "size": 12882947
+      },
+      "broken": false,
+      "collectionId": 60539122
+    },
+    {
+      "_id": 1371172828,
+      "link": "https://www.reddit.com/r/ZedEditor/s/UdYzQvYxcF",
+      "title": "🚀 Zed for Laravel - Complete starter kit for Laravel development : r/ZedEditor",
+      "excerpt": "Explore this post and more from the ZedEditor community",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://share.redd.it/preview/post/1nwz4uu",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://share.redd.it/preview/post/1nwz4uu"
+        }
+      ],
+      "tags": ["zed", "editor", "template"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-05T14:31:36.772Z",
+      "collection": { "$ref": "collections", "$id": 60539122, "oid": 60539122 },
+      "lastUpdate": "2025-10-06T09:34:21.006Z",
+      "domain": "reddit.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371524710,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T14:33:25.252Z",
+        "size": 22095545
+      },
+      "broken": false,
+      "collectionId": 60539122
+    },
+    {
+      "_id": 1371148877,
+      "link": "https://shadcntemplates.com/theme/haydenbleasel-shadcn-prose",
+      "title": "Shadcn Templates",
+      "excerpt": "A huge collection of shadcn ui templates and components. Shadcn UI Templates, UI Kits, Blocks, Components, Boilerplates, Admin dashboards and more.",
+      "note": "",
+      "type": "article",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://deifkwefumgah.cloudfront.net/screenshots/thumbnail/haydenbleasel-shadcn-prose-thumbnail-2x.webp",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://deifkwefumgah.cloudfront.net/screenshots/thumbnail/haydenbleasel-shadcn-prose-thumbnail-2x.webp"
+        },
+        { "type": "image", "link": "https://shadcntemplates.com/og-image.png" }
+      ],
+      "tags": ["shadcn", "template"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T14:21:01.624Z",
+      "collection": { "$ref": "collections", "$id": 60734327, "oid": 60734327 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T14:21:10.859Z",
+      "domain": "shadcntemplates.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1371148877,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T14:25:08.968Z",
+        "size": 430921
+      },
+      "broken": false,
+      "collectionId": 60734327
+    },
+    {
+      "_id": 1370682355,
+      "link": "https://carapace.sh/",
+      "title": "Carapace",
+      "excerpt": "A multi-shell completion library and binary.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://carapace.sh/opengraph.png",
+      "media": [
+        { "type": "image", "link": "https://carapace.sh/opengraph.png" }
+      ],
+      "tags": ["cli", "shell", "tool", "dev-tools", "autocomplete"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T08:21:16.974Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T08:21:39.991Z",
+      "domain": "carapace.sh",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1370682355,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T08:23:46.044Z",
+        "size": 1831339
+      },
+      "broken": false,
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1370660879,
+      "link": "https://kokonutui.com/",
+      "title": "KokonutUI",
+      "excerpt": "Collection of 100+ stunning UI components free and open source built with Next.js, React, Tailwind CSS, and Motion.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://kokonutui.com/opengraph-image.png?72ee12a6e08a1846",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://kokonutui.com/opengraph-image.png?72ee12a6e08a1846"
+        },
+        {
+          "type": "image",
+          "link": "https://kokonutui.com/twitter-image.png?72ee12a6e08a1846"
+        }
+      ],
+      "tags": ["components", "library", "shadcn"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T07:45:39.635Z",
+      "collection": { "$ref": "collections", "$id": 60734327, "oid": 60734327 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T13:00:49.832Z",
+      "domain": "kokonutui.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1370660889,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T07:47:19.532Z",
+        "size": 705204
+      },
+      "broken": false,
+      "collectionId": 60734327
+    },
+    {
+      "_id": 1370650974,
+      "link": "https://cocoatech.io/",
+      "title": "Path Finder for macOS",
+      "excerpt": "Path Finder is a file manager for macOS. #1 file manager for macOS since 2001!",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "",
+      "media": [],
+      "tags": ["mac", "application", "productivity", "file manager"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T07:12:52.341Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T07:12:56.090Z",
+      "domain": "cocoatech.io",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1370650974,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T07:15:44.456Z",
+        "size": 48418
+      },
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1370650359,
+      "link": "https://setapp.com/apps?utm_source=medium&utm_medium=referral&utm_campaign=i_started_using_path_finder_from_setap_and_now_my_files_listen_to_me&utm_content=expert/Olga",
+      "title": "Apps for your tasks | Setapp",
+      "excerpt": "Browse 260+ apps for your daily tasks. Access favorites like CleanMyMac X, CleanShot X, Bartender and many more under one Setapp subscription.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://cdn.setapp.com/master-6f3e25694a753e429a8c024a0cb49b14a6756469-866/static/shared/images/social/og.png",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://cdn.setapp.com/master-6f3e25694a753e429a8c024a0cb49b14a6756469-866/static/shared/images/social/og.png"
+        }
+      ],
+      "tags": ["mac", "tool", "application", "productivity"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-05T07:10:02.389Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "highlights": [],
+      "lastUpdate": "2025-10-05T07:10:05.011Z",
+      "domain": "setapp.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1370650359,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-05T07:12:25.212Z",
+        "size": 2458486
+      },
+      "broken": false,
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1370032013,
+      "link": "https://espressoapp.com/",
+      "title": "The Web Editor for Mac",
+      "excerpt": "Espresso is the web editor for Mac, more productive than caffeine.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://espressoapp.com/presto/social/card.jpg",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://espressoapp.com/presto/social/card.jpg"
+        }
+      ],
+      "tags": ["mac", "editor", "tool", "frontend"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-04T21:45:03.919Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "highlights": [],
+      "lastUpdate": "2025-10-04T21:45:38.856Z",
+      "domain": "espressoapp.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1370032013,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-04T21:46:25.957Z",
+        "size": 2165223
+      },
+      "broken": false,
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1369699059,
+      "link": "https://www.reddit.com/r/ZedEditor/s/RnGpa5nU7m",
+      "title": "I love my custom zed theme. Having so much fun coding with it. : r/ZedEditor",
+      "excerpt": "Explore this post and more from the ZedEditor community",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://share.redd.it/preview/post/1nce60h",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://share.redd.it/preview/post/1nce60h"
+        }
+      ],
+      "tags": ["theme", "zed", "style", "editor"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-04T15:36:43.087Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "lastUpdate": "2025-10-04T15:36:55.530Z",
+      "domain": "reddit.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1369699059,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-04T15:46:38.020Z",
+        "size": 1991745
+      },
+      "broken": false,
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1369697929,
+      "link": "https://www.reddit.com/r/ZedEditor/s/RQAE55hOur",
+      "title": "My setup and configs zed : r/ZedEditor",
+      "excerpt": "Explore this post and more from the ZedEditor community",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://share.redd.it/preview/post/1nqzoal",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://share.redd.it/preview/post/1nqzoal"
+        }
+      ],
+      "tags": ["theme", "zed", "style", "editor"],
+      "highlights": [],
+      "important": false,
+      "removed": false,
+      "created": "2025-10-04T15:33:05.326Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "lastUpdate": "2025-10-04T15:33:21.700Z",
+      "domain": "reddit.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1369697929,
+      "broken": false,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-04T15:46:51.047Z",
+        "size": 13592643
+      },
+      "collectionId": 59250730
+    },
+    {
+      "_id": 1368013009,
+      "link": "https://github.com/illixion/vscode-vibrancy-continued",
+      "title": "GitHub - illixion/vscode-vibrancy-continued: Enable Acrylic/Glass effect for your VS Code.",
+      "excerpt": "Enable Acrylic/Glass effect for your VS Code. Contribute to illixion/vscode-vibrancy-continued development by creating an account on GitHub.",
+      "note": "",
+      "type": "link",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "cover": "https://opengraph.githubassets.com/09e888ea28f2ac5daaaa6f703b1699abf73b8479c8258f8fb7e781d81acec37c/illixion/vscode-vibrancy-continued",
+      "media": [
+        {
+          "type": "image",
+          "link": "https://opengraph.githubassets.com/09e888ea28f2ac5daaaa6f703b1699abf73b8479c8258f8fb7e781d81acec37c/illixion/vscode-vibrancy-continued"
+        }
+      ],
+      "tags": ["extension", "vscode", "style", "theme"],
+      "important": false,
+      "reminder": { "date": null },
+      "removed": false,
+      "created": "2025-10-03T16:18:09.522Z",
+      "collection": { "$ref": "collections", "$id": 59250730, "oid": 59250730 },
+      "highlights": [],
+      "lastUpdate": "2025-10-03T16:18:19.364Z",
+      "domain": "github.com",
+      "creatorRef": {
+        "_id": 2538886,
+        "avatar": "",
+        "name": "rotem-semah",
+        "email": ""
+      },
+      "sort": 1368013009,
+      "cache": {
+        "status": "ready",
+        "created": "2025-10-03T16:20:15.084Z",
+        "size": 27057493
+      },
+      "broken": false,
+      "collectionId": 59250730
+    }
+  ],
+  "count": 156,
+  "collectionId": 0
+}

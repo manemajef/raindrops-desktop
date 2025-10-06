@@ -15,14 +15,14 @@ Contains **core app state** — primarily the active user — so the app can ski
 ###### **workflow**
 
 - On startup, the app checks if an **active user** exists via `loadState()` from  
-  `_electron/backend/utils/state.ts_`.
+  `electron/backend/utils/state.ts`.
 
   - If not, it prompts for a **test token**, which is passed to  
-    `_electron/backend/auth/auth.ts_ → registerToken(token: string)`.  
+    `electron/backend/auth/auth.ts → registerToken(token: string)`.  
     This function fetches user data from the Raindrop API, inserts it into  
-    `_electron/backend/db/data/local.db_`, and updates `_electron/backend/data/state.json_`.
+    `electron/backend/db/data/local.db`, and updates `electron/backend/data/state.json`.
 
-- Once an active user is found, `_electron/backend/sync/sync-data.ts_ → syncData()` runs automatically,  
+- Once an active user is found, `electron/backend/sync/sync-data.ts → syncData()` runs automatically,  
   fetching collections and raindrops and updating local data.
 
 > The **public API endpoints** (to be used by the Electron renderer/frontend)  

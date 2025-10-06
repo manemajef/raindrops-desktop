@@ -1,0 +1,130 @@
+{
+  "result": true,
+  "items": [
+    {
+      "_id": 59705853,
+      "title": "gpts",
+      "description": "",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "public": false,
+      "view": "list",
+      "count": 1,
+      "cover": [],
+      "sort": 4,
+      "expanded": true,
+      "creatorRef": { "_id": 2538886, "name": "rotem-semah", "email": "" },
+      "lastAction": "2025-09-30T00:09:36.269Z",
+      "created": "2025-09-08T19:40:19.176Z",
+      "lastUpdate": "2025-09-30T11:30:59.443Z",
+      "parent": null,
+      "slug": "gpts",
+      "access": {
+        "for": 2538886,
+        "level": 4,
+        "root": false,
+        "draggable": true
+      },
+      "author": true
+    },
+    {
+      "_id": 59250730,
+      "title": "Dev",
+      "description": "",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "public": false,
+      "view": "list",
+      "count": 29,
+      "cover": [],
+      "sort": 1,
+      "expanded": false,
+      "creatorRef": { "_id": 2538886, "name": "rotem-semah", "email": "" },
+      "lastAction": "2025-10-06T09:35:28.665Z",
+      "created": "2025-08-26T21:49:56.637Z",
+      "lastUpdate": "2025-10-06T09:35:41.524Z",
+      "parent": null,
+      "slug": "dev",
+      "access": {
+        "for": 2538886,
+        "level": 4,
+        "root": false,
+        "draggable": true
+      },
+      "author": true
+    },
+    {
+      "_id": 60490750,
+      "title": "Qblox",
+      "description": "",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "public": false,
+      "view": "list",
+      "count": 9,
+      "cover": [],
+      "sort": 0,
+      "expanded": true,
+      "creatorRef": { "_id": 2538886, "name": "rotem-semah", "email": "" },
+      "lastAction": "2025-09-30T23:36:48.121Z",
+      "created": "2025-09-29T18:14:32.274Z",
+      "lastUpdate": "2025-09-30T23:34:40.229Z",
+      "parent": null,
+      "slug": "qblox",
+      "access": {
+        "for": 2538886,
+        "level": 4,
+        "root": false,
+        "draggable": true
+      },
+      "author": true
+    },
+    {
+      "_id": 59353649,
+      "title": "Resources",
+      "description": "",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "public": false,
+      "view": "list",
+      "count": 1,
+      "cover": [],
+      "sort": null,
+      "expanded": true,
+      "creatorRef": { "_id": 2538886, "name": "rotem-semah", "email": "" },
+      "lastAction": "2025-10-06T08:57:33.655Z",
+      "created": "2025-08-29T12:59:03.133Z",
+      "lastUpdate": "2025-10-06T08:57:33.655Z",
+      "parent": null,
+      "slug": "resources",
+      "access": {
+        "for": 2538886,
+        "level": 4,
+        "root": false,
+        "draggable": true
+      },
+      "author": true
+    },
+    {
+      "_id": 60113702,
+      "title": "youtube",
+      "description": "",
+      "user": { "$ref": "users", "$id": 2538886 },
+      "public": false,
+      "view": "list",
+      "count": 2,
+      "cover": [],
+      "sort": null,
+      "expanded": true,
+      "creatorRef": { "_id": 2538886, "name": "rotem-semah", "email": "" },
+      "lastAction": "2025-10-02T17:04:43.941Z",
+      "created": "2025-09-20T16:34:04.770Z",
+      "lastUpdate": "2025-10-02T17:04:43.941Z",
+      "parent": null,
+      "slug": "youtube",
+      "access": {
+        "for": 2538886,
+        "level": 4,
+        "root": false,
+        "draggable": true
+      },
+      "author": true
+    }
+  ]
+}

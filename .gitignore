@@ -9,18 +9,13 @@ lerna-debug.log*
 
 node_modules
 dist
-AGENT.md 
-CODEx_TUTOR_NOTES.md 
 dist-ssr
 *.local
 .env 
 .env.*
-collections.json 
-raindrops.json 
-data/*.db 
-data/*.sqlite 
-data/*.db-wal 
-data/*.db-shm 
+data/.*
+demo/.*
+
 dist-electron
 # Editor directories and files
 .vscode/*
