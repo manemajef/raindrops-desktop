@@ -35,6 +35,7 @@ function createWindow() {
   }
 }
 
+import "./backend/api/index";
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();

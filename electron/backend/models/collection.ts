@@ -1,3 +1,5 @@
+import { InferSelectModel } from "drizzle-orm";
+import { collectionTable } from "../db/schema";
 export interface CollectionRes {
   result: boolean;
   items: CollectionRaw[];
@@ -45,3 +47,5 @@ export interface Parent {
   $id: 59250730;
   $ref: "collections";
 }
+
+export type CollectionSelect = InferSelectModel<typeof collectionTable>;

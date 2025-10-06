@@ -1,6 +1,41 @@
 import { Button } from "@/components/ui/button";
-
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import type { User, Collection, Raindrop } from "electron/shared/types";
+type Data = {
+  user: User;
+  collections: Collection[];
+  raindrops: Raindrop[];
+};
 export default function HomePage() {
+  const [data, setData] = useState<Date | null>(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await window.api.invoke("api:onStartUp");
+        if (!res || !res.user) {
+          navigate("/welcome");
+        }
+        setData(res);
+      } catch (err) {
+        console.log(err);
+        navigate("/welcome");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, [navigate]);
+
+  if (loading) {
+    return (
+      <div className="w-screen h-screen flex place-content-center">
+        <h1 className="text-8xl font-bold text-foreground/70">Loading ... </h1>
+      </div>
+    );
+  }
   return (
     <div className="px-4 py-12 w-full">
       <div className="max-w-lg mx-auto mt-12">

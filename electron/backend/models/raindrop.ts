@@ -1,3 +1,5 @@
+import { InferSelectModel } from "drizzle-orm";
+import { raindropTable } from "../db/schema";
 export interface RaindropRes {
   result: boolean;
   items: RaindropRaw[];
@@ -65,3 +67,5 @@ export interface Cache {
   retries?: number;
   retryAfter?: string;
 }
+
+export type RaindropSelect = InferSelectModel<typeof raindropTable>;

@@ -1,3 +1,5 @@
+import { InferSelectModel } from "drizzle-orm";
+import { userTable } from "../db/schema";
 export interface UserRes {
   result: boolean;
   user: UserRaw;
@@ -68,3 +70,4 @@ export interface Config {
 export interface Apple {
   enabled: boolean;
 }
+export type UserSelect = InferSelectModel<typeof userTable>;

@@ -1,5 +1,9 @@
-import * as schema from "./schema.ts";
-
-import "dotenv/config";
 import { drizzle } from "drizzle-orm/libsql";
-export const db = drizzle(process.env.DB_FILE_NAME!, { schema });
+import { createClient } from "@libsql/client";
+import path from "node:path";
+import { app } from "electron";
+import * as schema from "./schema.js";
+
+const dbPath = path.join(app.getPath("userData"), "data.db");
+const client = createClient({ url: `file:${dbPath}` });
+export const db = drizzle(client, { schema });

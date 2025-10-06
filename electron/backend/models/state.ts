@@ -1,7 +1,7 @@
 export interface State {
   isDev: boolean;
   isLogged: boolean;
-  user: ActiveUser;
+  user: ActiveUser | null;
 }
 
 export interface ActiveUser {

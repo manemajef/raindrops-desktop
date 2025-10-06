@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { State } from "../models/state";
-const isDev = true;
+// const isDev = true;
 const basePath = path.join(process.cwd(), "data");
 const statePath = path.join(basePath, "state.json");
 export function loadState(): State {

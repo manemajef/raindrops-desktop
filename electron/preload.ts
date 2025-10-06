@@ -25,6 +25,10 @@ contextBridge.exposeInMainWorld("ipcRenderer", {
   // ...
 });
 
+contextBridge.exposeInMainWorld("api", {
+  invoke: (channel, ...args) => ipcRenderer.invoke(channel, ...args),
+});
+
 contextBridge.exposeInMainWorld("authApi", {
   authenticate: () => ipcRenderer.invoke("auth:authenticate"),
   refresh: () => ipcRenderer.invoke("auth:refresh"),
