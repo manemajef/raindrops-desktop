@@ -13,8 +13,8 @@ dist-ssr
 *.local
 .env 
 .env.*
-data.*
-demo.*
+data/
+demo/
 
 dist-electron
 # Editor directories and files
